@@ -5,6 +5,7 @@
 ** Add an object to the physics update
 */
 
+#include <string.h>
 #include <stdlib.h>
 #include "my_sfml_core.h"
 #include "my_sfml_gameobject.h"
@@ -28,7 +29,7 @@ int add_object_physics_engine(sf_physics_engine_t *engine, gameobject_t *object)
 		my_putdebug("Object doesn't have the required components!\n");
 		return (84);
 	}
-	engine->physics_objects = sf_push(object, my_strdup(object->id), \
+	engine->physics_objects = sf_push(object, strdup(object->id), \
 engine->physics_objects);
 	return (0);
 }
@@ -42,7 +43,7 @@ int remove_object_physics_engine(sf_physics_engine_t *engine, gameobject_t *obj)
 		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return (84);
 	}
-	id = my_strdup(obj->id);
+	id = strdup(obj->id);
 	sf_remove(id, &(engine->physics_objects));
 	free(id);
 	return (0);

@@ -5,6 +5,7 @@
 ** Add a component to a gameobject
 */
 
+#include <stdlib.h>
 #include "my_sfml_core.h"
 #include "my_sfml_gameobject.h"
 
@@ -79,7 +80,7 @@ void *get_component(gameobject_t *go, int type)
 	}
 	current_component = go->components;
 	while (current_component != NULL) {
-		if (my_getnbr(current_component->id) == type)
+		if (atoi(current_component->id) == type)
 			return (current_component->data);
 		current_component = current_component->next;
 	}

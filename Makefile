@@ -30,12 +30,9 @@ SRC_FILES_CORE	=	sf_linked_list_get_data.c			\
 			sf_linked_list_size.c				\
 			sf_linked_list_sort.c				\
 			sf_linked_list.c				\
-			my_strdup.c					\
-			my_strlen.c					\
 			my_putdebug.c					\
-			my_int_to_str.c					\
-			my_strcmp.c					\
-			my_getnbr.c
+			my_int_to_str.c
+
 
 SRC_DIR_GO	=	$(realpath src/gameobject)
 
@@ -96,11 +93,11 @@ SRC		=	$(addprefix $(SRC_DIR_AUDIO)/, $(SRC_FILES_AUDIO)) \
 
 OBJ		=	$(SRC:%.c=%.o)
 
-NAME		=	libmysfml.a
+NAME		=	mysfml
 
 INCLUDE		=	-I include -I ../my/include
 
-CFLAGS		=	-Wall -Wextra
+CFLAGS		=	-W -Wall -Wextra -Werror
 CFLAGS		+=	$(INCLUDE)
 
 CC		=	gcc
@@ -112,18 +109,24 @@ FIREFOX		:=	$(shell command -v firefox 2> /dev/null)
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-		$(AR) -rc $(NAME) $(OBJ)
+		$(AR) -rc lib$(NAME).a $(OBJ) $(SHARED_COMPILE)
 
 clean:
 		$(RM) $(OBJ)
 
 fclean:		clean
-		$(RM) $(NAME)
+		$(RM) lib$(NAME).so lib$(NAME).a
 
 re:		fclean all
 
 debug:		CFLAGS += -g
 debug:		re
+
+shared:		CFLAGS += -fPIC
+shared:		$(OBJ)
+		$(CC) -shared $(OBJ) -o lib$(NAME).so
+
+reshared:	fclean shared
 
 gen_doc:	clean_doc
 ifndef DOXYGEN
@@ -140,3 +143,14 @@ ifndef FIREFOX
 		$(error "Firefox wasn't found! Launch html/index.html manually")
 endif
 		firefox html/index.html
+
+install:
+		$(error "Can't install a non shared library")
+
+install_shared:
+		cp lib$(NAME).so /usr/local/lib/lib$(NAME).so
+		cp -r include/* /usr/local/include/
+
+uninstall:
+		rm /usr/local/lib/$(NAME).so
+		rm /usr/local/include/$(NAME)*

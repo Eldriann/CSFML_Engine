@@ -11,6 +11,7 @@
 #include "my_sfml_audio.h"
 #include "my_sfml_gameobject.h"
 #include "my_sfml_physics.h"
+#include <string.h>
 #include <SFML/Graphics.h>
 #include <stdlib.h>
 
@@ -21,7 +22,7 @@ void destroy_engine(sf_engine_t *engine)
 	if (engine == NULL)
 		return;
 	while (engine->scenes != NULL) {
-		curr_id = my_strdup(engine->scenes->id);
+		curr_id = strdup(engine->scenes->id);
 		destroy_scene(engine->scenes->data);
 		sf_remove(curr_id, &engine->scenes);
 		free(curr_id);

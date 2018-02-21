@@ -6,6 +6,7 @@
 */
 
 #include "my_sfml_core.h"
+#include <string.h>
 #include <stdlib.h>
 
 sf_linked_list_t *del_element(sf_linked_list_t *last, sf_linked_list_t *curr, \
@@ -38,7 +39,7 @@ void sf_remove(char *id, sf_linked_list_t **list)
 	curr = *list;
 	next = curr->next;
 	for (int i = 0; curr != NULL; i++) {
-		if (my_strcmp(id, curr->id) == 0)
+		if (strcmp(id, curr->id) == 0)
 			curr = del_element(last, curr, next, list);
 		last = curr;
 		curr = next;

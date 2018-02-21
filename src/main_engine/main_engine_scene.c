@@ -5,6 +5,7 @@
 ** Scene management
 */
 
+#include <string.h>
 #include <stdlib.h>
 #include "my_sfml_engine.h"
 
@@ -12,7 +13,7 @@ int add_scene(sf_engine_t *engine, sf_scene_t *scene)
 {
 	if (engine == NULL || scene == NULL)
 		return (84);
-	engine->scenes = sf_push(scene, my_strdup(scene->name), engine->scenes);
+	engine->scenes = sf_push(scene, strdup(scene->name), engine->scenes);
 	return (0);
 }
 
@@ -48,7 +49,7 @@ int update_selected_scene(sf_engine_t *engine)
 
 int change_scene(sf_engine_t *engine, const char *name, void *data)
 {
-	engine->next_scene = my_strdup(name);
+	engine->next_scene = strdup(name);
 	engine->data = data;
 	return (0);
 }

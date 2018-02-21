@@ -7,6 +7,7 @@
 
 #include "my_sfml_core.h"
 #include "my_sfml_graphics.h"
+#include <string.h>
 #include <stdlib.h>
 
 sf_layer_t *create_layer(int priority)
@@ -26,7 +27,7 @@ sf_layer_t *create_layer(int priority)
 
 void destroy_layer(sf_layer_t *layer)
 {
-	char *curr_id = my_strdup("");
+	char *curr_id = strdup("");
 
 	if (layer == NULL) {
 		my_putdebug("Destroy layer:\n    ");
@@ -35,7 +36,7 @@ void destroy_layer(sf_layer_t *layer)
 	}
 	while (layer->sprite_list != NULL) {
 		free(curr_id);
-		curr_id = my_strdup(layer->sprite_list->id);
+		curr_id = strdup(layer->sprite_list->id);
 		sf_remove(curr_id, &layer->sprite_list);
 	}
 	free(curr_id);

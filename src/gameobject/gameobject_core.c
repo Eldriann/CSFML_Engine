@@ -5,6 +5,7 @@
 ** Core for the game objects
 */
 
+#include <string.h>
 #include <stdlib.h>
 #include "my_sfml_core.h"
 #include "my_sfml_gameobject.h"
@@ -20,9 +21,9 @@ gameobject_t *create_gameobject(char const *name)
 	}
 	new_go->id = my_int_to_str((long)new_go);
 	if (name == NULL)
-		new_go->name = my_strdup("NO_NAME");
+		new_go->name = strdup("NO_NAME");
 	else
-		new_go->name = my_strdup(name);
+		new_go->name = strdup(name);
 	new_go->components = NULL;
 	new_go->destroy = &destroy_gameobject;
 	new_go->add_component = &add_component;
@@ -40,7 +41,7 @@ void destroy_gameobject(gameobject_t *go)
 		return;
 	}
 	while (go->components != NULL) {
-		curr_id = my_strdup(go->components->id);
+		curr_id = strdup(go->components->id);
 		((component_cast_t *)go->components->data)->destroy(\
 go->components->data);
 		sf_remove(curr_id, &go->components);

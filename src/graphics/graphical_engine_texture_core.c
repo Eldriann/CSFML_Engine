@@ -5,6 +5,7 @@
 ** Load a texture in memory to be used after
 */
 
+#include <string.h>
 #include <stdlib.h>
 #include "my_sfml_core.h"
 #include "my_sfml_graphics.h"
@@ -29,13 +30,13 @@ int load_texture_in_memory(sf_graph_engine_t *engine, char const *path)
 		return (84);
 	}
 	engine->textures_list = sf_push(new_texture, \
-my_strdup(path), engine->textures_list);
+strdup(path), engine->textures_list);
 	return (0);
 }
 
 void unload_all_textures(sf_graph_engine_t *engine)
 {
-	char *curr_id = my_strdup("");
+	char *curr_id = strdup("");
 
 	if (engine == NULL) {
 		my_putdebug("Unload texture:\n    ");
@@ -44,7 +45,7 @@ void unload_all_textures(sf_graph_engine_t *engine)
 	}
 	while (engine->textures_list != NULL) {
 		free(curr_id);
-		curr_id = my_strdup(engine->textures_list->id);
+		curr_id = strdup(engine->textures_list->id);
 		sfTexture_destroy(engine->textures_list->data);
 		sf_remove(curr_id, &(engine->textures_list));
 	}

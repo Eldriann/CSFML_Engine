@@ -5,6 +5,7 @@
 ** Create and destroy a scene respectivelly
 */
 
+#include <string.h>
 #include <stdlib.h>
 #include "my_sfml_core.h"
 #include "my_sfml_engine.h"
@@ -16,7 +17,7 @@ sf_scene_t *create_scene(char *name)
 
 	if (scene == NULL)
 		return (NULL);
-	scene->name = my_strdup(name);
+	scene->name = strdup(name);
 	scene->graphical_engine = create_graphical_engine();
 	scene->audio_engine = create_audio_engine();
 	scene->updaters = NULL;
@@ -35,7 +36,7 @@ void clean_gameobjects(sf_scene_t *scene)
 	if (scene == NULL)
 		return;
 	while (scene->gameobjects != NULL) {
-		curr_id = my_strdup(scene->gameobjects->id);
+		curr_id = strdup(scene->gameobjects->id);
 		((gameobject_t *)scene->gameobjects->data)->destroy(\
 scene->gameobjects->data);
 		sf_remove(curr_id, &scene->gameobjects);

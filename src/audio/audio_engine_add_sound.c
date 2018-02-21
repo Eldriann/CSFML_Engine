@@ -8,6 +8,7 @@
 #include "my_sfml_core.h"
 #include "my_sfml_audio.h"
 #include <stdlib.h>
+#include <string.h>
 #include <SFML/Audio.h>
 
 int add_audio_to_engine(sf_audio_engine_t *engine, const char *path, int loop)
@@ -25,7 +26,7 @@ int add_audio_to_engine(sf_audio_engine_t *engine, const char *path, int loop)
 		return (84);
 	}
 	sfMusic_setLoop(new_music, loop);
-	engine->sound_list = sf_push(new_music, my_strdup(path), \
+	engine->sound_list = sf_push(new_music, strdup(path), \
 engine->sound_list);
 	return (0);
 }
