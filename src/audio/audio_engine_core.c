@@ -15,8 +15,8 @@ sf_audio_engine_t *create_audio_engine(void)
 	sf_audio_engine_t *new_engine = malloc(sizeof(*new_engine));
 
 	if (new_engine == NULL) {
-		my_puterror("Create audio engine:\n    ");
-		my_puterror(MSG_MY_SFML_MALLOC);
+		my_putdebug("Create audio engine:\n    ");
+		my_putdebug(MSG_MY_SFML_MALLOC);
 		return (NULL);
 	}
 	new_engine->sound_list = NULL;

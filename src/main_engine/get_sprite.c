@@ -27,8 +27,8 @@ sfSprite *get_sprite(sf_engine_t *engine, char const *id)
 	sfSprite *new_sprite = sfSprite_create();
 
 	if (engine == NULL || id == NULL || new_sprite == NULL) {
-		my_puterror("Get sprite:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Get sprite:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		if (new_sprite != NULL)
 			sfSprite_destroy(new_sprite);
 		return (NULL);

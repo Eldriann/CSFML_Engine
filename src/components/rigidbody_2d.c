@@ -14,8 +14,8 @@ sf_rigidbody_2d_t *create_rigidbody_2d(gameobject_t *parent)
 	sf_rigidbody_2d_t *new_rigidbody = malloc(sizeof(*new_rigidbody));
 
 	if (new_rigidbody == NULL) {
-		my_puterror("Create rigidbody 2d:\n    ");
-		my_puterror(MSG_MY_SFML_MALLOC);
+		my_putdebug("Create rigidbody 2d:\n    ");
+		my_putdebug(MSG_MY_SFML_MALLOC);
 		return (NULL);
 	}
 	new_rigidbody->parent = parent;

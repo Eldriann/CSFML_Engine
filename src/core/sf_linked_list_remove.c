@@ -31,8 +31,8 @@ void sf_remove(char *id, sf_linked_list_t **list)
 	sf_linked_list_t *next = NULL;
 
 	if (id == NULL || list == NULL || *list == NULL) {
-		my_puterror("Remove from list:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Remove from list:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return;
 	}
 	curr = *list;
@@ -54,8 +54,8 @@ void sf_remove_node(sf_linked_list_t *node, sf_linked_list_t **list)
 	sf_linked_list_t *next = NULL;
 
 	if (node == NULL || list == NULL || *list == NULL) {
-		my_puterror("Remove from list:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Remove from list:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return;
 	}
 	curr = *list;

@@ -15,8 +15,8 @@ sf_physics_engine_t *create_physics_engine(void)
 	sf_physics_engine_t *new_engine = malloc(sizeof(*new_engine));
 
 	if (new_engine == NULL) {
-		my_puterror("Create physics engine:\n    ");
-		my_puterror(MSG_MY_SFML_MALLOC);
+		my_putdebug("Create physics engine:\n    ");
+		my_putdebug(MSG_MY_SFML_MALLOC);
 		return (NULL);
 	}
 	new_engine->physics_objects = NULL;
@@ -36,8 +36,8 @@ void destroy_physics_engine(sf_physics_engine_t *engine)
 	char *curr_id = NULL;
 
 	if (engine == NULL) {
-		my_puterror("Destroy physics engine:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Destroy physics engine:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return;
 	}
 	while (engine->physics_objects != NULL) {

@@ -14,14 +14,14 @@ int add_to_layer(sf_graph_engine_t *engine, int layer, void **sprite)
 	sf_layer_t *requested_layer = NULL;
 
 	if (engine == NULL || sprite == NULL || *sprite == NULL) {
-		my_puterror("Add sprite to layer:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Add sprite to layer:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return (84);
 	}
 	requested_layer = (sf_layer_t *)get_data_from_node(\
 engine->layers_list, &layer, &layer_equals);
 	if (requested_layer == NULL) {
-		my_puterror("    [INFO]Just add missing layer don't bother\n");
+		my_putdebug("    [INFO]Just add missing layer don't bother\n");
 		requested_layer = create_layer(layer);
 		engine->layers_list = sf_push(requested_layer, \
 my_int_to_str(layer), engine->layers_list);

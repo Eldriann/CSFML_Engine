@@ -14,8 +14,8 @@ int play_audio(sf_audio_engine_t *engine, const char *id)
 	sfMusic *requested_music = NULL;
 
 	if (engine == NULL || id == NULL) {
-		my_puterror("Play audio:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Play audio:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return (84);
 	}
 	requested_music = (sfMusic *)get_data(id, engine->sound_list);

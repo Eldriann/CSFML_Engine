@@ -15,12 +15,12 @@ sf_linked_list_t **list_to_list_array(sf_linked_list_t *list)
 	sf_linked_list_t *next = list;
 
 	if (list_array == NULL) {
-		my_puterror(MSG_MY_SFML_MALLOC);
+		my_putdebug(MSG_MY_SFML_MALLOC);
 		return (NULL);
 	}
 	if (list == NULL) {
 		free(list_array);
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return (NULL);
 	}
 	for (int i = 0; i < list_size; i++) {

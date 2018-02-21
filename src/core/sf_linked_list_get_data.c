@@ -13,8 +13,8 @@ void *get_data_from_node(sf_linked_list_t *list, void *comp, int (*cmp)())
 	int list_size = 0;
 
 	if (list == NULL || comp == NULL || cmp == NULL) {
-		my_puterror("Get data from comp:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Get data from comp:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return (NULL);
 	}
 	list_size = my_sf_list_size(list);
@@ -23,15 +23,15 @@ void *get_data_from_node(sf_linked_list_t *list, void *comp, int (*cmp)())
 			return (list->data);
 		list = list->next;
 	}
-	my_puterror(MSG_MY_SFML_DATA_NOT_FOUND);
+	my_putdebug(MSG_MY_SFML_DATA_NOT_FOUND);
 	return (NULL);
 }
 
 void *get_data(char const *id, sf_linked_list_t *list)
 {
 	if (id == NULL || list == NULL) {
-		my_puterror("Get data from id:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Get data from id:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return (NULL);
 	}
 	while (list != NULL) {
@@ -39,7 +39,7 @@ void *get_data(char const *id, sf_linked_list_t *list)
 			return (list->data);
 		list = list->next;
 	}
-	my_puterror(MSG_MY_SFML_DATA_NOT_FOUND);
+	my_putdebug(MSG_MY_SFML_DATA_NOT_FOUND);
 	return (NULL);
 }
 

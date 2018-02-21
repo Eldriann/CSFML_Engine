@@ -22,6 +22,6 @@ layer_render_type_t new_type)
 		}
 		current_layer = current_layer->next;
 	}
-	my_puterror("[ERROR]Set layer render type:\n\tLayer not found!\n");
+	my_putdebug("[ERROR]Set layer render type:\n\tLayer not found!\n");
 	return (84);
 }

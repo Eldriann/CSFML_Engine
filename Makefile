@@ -29,7 +29,11 @@ SRC_FILES_CORE	=	sf_linked_list_get_data.c			\
 			sf_linked_list_remove.c				\
 			sf_linked_list_size.c				\
 			sf_linked_list_sort.c				\
-			sf_linked_list.c
+			sf_linked_list.c				\
+			my_strdup.c					\
+			my_strlen.c					\
+			my_putdebug.c					\
+			my_int_to_str.c
 
 SRC_DIR_GO	=	$(realpath src/gameobject)
 

@@ -91,8 +91,8 @@ int update_physics(sf_physics_engine_t *engine, int time)
 	sf_linked_list_t *curr_object = NULL;
 
 	if (engine == NULL) {
-		my_puterror("Update physics:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Update physics:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return (84);
 	}
 	curr_object = engine->physics_objects;

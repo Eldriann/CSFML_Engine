@@ -59,7 +59,7 @@ void render_layer(sf_layer_t *layer, sfRenderWindow *window)
 		render_sprite(layer, window);
 		break;
 	default:
-		my_puterror("[ERROR]Layer type unknown!\n");
+		my_putdebug("[ERROR]Layer type unknown!\n");
 		break;
 	}
 }

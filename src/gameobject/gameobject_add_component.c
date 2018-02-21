@@ -26,18 +26,18 @@ void *add_component(gameobject_t *go, go_component_t type)
 	void *new_comp = NULL;
 
 	if (go == NULL) {
-		my_puterror("Add component:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Add component:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return (NULL);
 	}
 	if (get_component(go, type)) {
-		my_puterror("[INFO]Gamobject already have this component\n");
+		my_putdebug("[INFO]Gamobject already have this component\n");
 		return (get_component(go, type));
 	}
 	new_comp = get_component_struct(type, go);
 	if (new_comp == NULL) {
-		my_puterror("Add component:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Add component:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return (NULL);
 	}
 	go->components = sf_push(new_comp, my_int_to_str(type), go->components);
@@ -50,18 +50,18 @@ void *(*create_func)(gameobject_t *parent), int type)
 	void *new_comp = NULL;
 
 	if (go == NULL || create_func == NULL) {
-		my_puterror("Add custom component:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Add custom component:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return (NULL);
 	}
 	if (get_component(go, type)) {
-		my_puterror("[INFO]Gamobject already have this component\n");
+		my_putdebug("[INFO]Gamobject already have this component\n");
 		return (get_component(go, type));
 	}
 	new_comp = create_func(go);
 	if (new_comp == NULL) {
-		my_puterror("Add component:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Add component:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return (NULL);
 	}
 	go->components = sf_push(new_comp, my_int_to_str(type), go->components);
@@ -73,8 +73,8 @@ void *get_component(gameobject_t *go, int type)
 	sf_linked_list_t *current_component = NULL;
 
 	if (go == NULL) {
-		my_puterror("Get component:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Get component:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return (NULL);
 	}
 	current_component = go->components;
@@ -83,7 +83,7 @@ void *get_component(gameobject_t *go, int type)
 			return (current_component->data);
 		current_component = current_component->next;
 	}
-	my_puterror("Get component:\n    ");
-	my_puterror(MSG_MY_SFML_DATA_NOT_FOUND);
+	my_putdebug("Get component:\n    ");
+	my_putdebug(MSG_MY_SFML_DATA_NOT_FOUND);
 	return (NULL);
 }

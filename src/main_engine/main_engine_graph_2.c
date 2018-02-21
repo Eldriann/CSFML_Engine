@@ -14,8 +14,8 @@
 int remove_from_layers_main_engine(sf_engine_t *engine, void **data)
 {
 	if (engine == NULL || data == NULL) {
-		my_puterror("Render main engine:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Render main engine:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return (84);
 	}
 	return (engine->current_scene->graphical_engine->remove_from_layers(\

@@ -17,6 +17,8 @@
 
 /* --------------------------------DEFINE-------------------------------- */
 
+#define DEBUG_MSG_ACTIVE 1
+
 #define MSG_MY_SFML_MALLOC "[ERROR] Malloc failed!\n"
 #define MSG_MY_SFML_ERR_NULL "[ERROR] Pointer given was NULL!\n"
 
@@ -115,6 +117,23 @@ int my_sf_list_size(sf_linked_list_t const *begin);
 void my_sort_sf_list(sf_linked_list_t **list, int (*cmp)());
 
 /* ----------------------------END-LINKEDLIST---------------------------- */
+
+/**
+** \brief strdup function
+*/
+char *my_strdup(const char *str);
+/**
+** \brief strlen function
+*/
+int my_strlen(const char *str);
+/**
+** \brief put an str on the error output
+*/
+int my_putdebug(const char *debug);
+/**
+** \brief turn an int in an str
+*/
+char *my_int_to_str(int nb);
 
 /* --------------------------------VECTOR-------------------------------- */
 

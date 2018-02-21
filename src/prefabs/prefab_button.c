@@ -15,7 +15,7 @@ char *tex_path, sfIntRect position)
 	button->position = position;
 	button->sprites[0] = engine->get_sprite(engine, tex_path);
 	if (button->sprites[0] == NULL) {
-		my_puterror("[INFO]Sprite not found\n");
+		my_putdebug("[INFO]Sprite not found\n");
 	} else {
 		sfSprite_setPosition(button->sprites[0], \
 (sfVector2f){position.left, position.top});
@@ -36,7 +36,7 @@ char *textures_path, sfIntRect position)
 	sf_button_t *button_component = NULL;
 
 	if (engine == NULL || textures_path == NULL) {
-		my_puterror("[ERROR]Prefab button: NULL receved!\n");
+		my_putdebug("[ERROR]Prefab button: NULL receved!\n");
 		return (NULL);
 	}
 	new_button = create_gameobject((name) ? name : "new button");

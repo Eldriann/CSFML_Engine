@@ -14,8 +14,8 @@ sf_layer_t *create_layer(int priority)
 	sf_layer_t *new_layer = malloc(sizeof(*new_layer));
 
 	if (new_layer == NULL) {
-		my_puterror("Create layer:\n    ");
-		my_puterror(MSG_MY_SFML_MALLOC);
+		my_putdebug("Create layer:\n    ");
+		my_putdebug(MSG_MY_SFML_MALLOC);
 		return (NULL);
 	}
 	new_layer->priority = priority;
@@ -29,8 +29,8 @@ void destroy_layer(sf_layer_t *layer)
 	char *curr_id = my_strdup("");
 
 	if (layer == NULL) {
-		my_puterror("Destroy layer:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Destroy layer:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return;
 	}
 	while (layer->sprite_list != NULL) {

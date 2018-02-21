@@ -15,13 +15,13 @@ int add_audio_to_engine(sf_audio_engine_t *engine, const char *path, int loop)
 	sfMusic *new_music = NULL;
 
 	if (engine == NULL || path == NULL) {
-		my_puterror("Add audio to engine:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Add audio to engine:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return (84);
 	}
 	new_music = sfMusic_createFromFile(path);
 	if (new_music == NULL) {
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return (84);
 	}
 	sfMusic_setLoop(new_music, loop);

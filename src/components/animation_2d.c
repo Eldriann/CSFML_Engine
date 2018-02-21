@@ -14,8 +14,8 @@ sf_animation_2d_t *create_animation_2d(gameobject_t *parent)
 	sf_animation_2d_t *new_animation = malloc(sizeof(*new_animation));
 
 	if (new_animation == NULL) {
-		my_puterror("Create animation_2d:\n    ");
-		my_puterror(MSG_MY_SFML_MALLOC);
+		my_putdebug("Create animation_2d:\n    ");
+		my_putdebug(MSG_MY_SFML_MALLOC);
 		return (NULL);
 	}
 	new_animation->parent = parent;
@@ -33,8 +33,8 @@ sf_animation_2d_t *create_animation_2d(gameobject_t *parent)
 void destroy_animation_2d(sf_animation_2d_t *animation)
 {
 	if (animation == NULL) {
-		my_puterror("Destroy animation:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Destroy animation:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return;
 	}
 	if (animation->sprite != NULL) {
@@ -47,8 +47,8 @@ void destroy_animation_2d(sf_animation_2d_t *animation)
 int set_sprite_animation_2d(sf_animation_2d_t *animation, sfSprite *sprite)
 {
 	if (animation == NULL || sprite == NULL) {
-		my_puterror("Set sprite animation:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Set sprite animation:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return (84);
 	}
 	if (animation->sprite)
@@ -62,16 +62,16 @@ int default_update_animation(sf_animation_2d_t *anim, int milliseconds)
 	char *time_as_str = my_int_to_str(milliseconds);
 
 	if (anim == NULL || time_as_str == NULL) {
-		my_puterror("Default update animation:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Default update animation:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		if (time_as_str != NULL)
 			free(time_as_str);
 		return (84);
 	}
-	my_puterror("[INFO][UPDATE ANIMATION]This is the default update \
+	my_putdebug("[INFO][UPDATE ANIMATION]This is the default update \
 animation that does nothing!\n    Probably not what you want!\n    Time:");
-	my_puterror(time_as_str);
-	my_puterror("\n");
+	my_putdebug(time_as_str);
+	my_putdebug("\n");
 	free(time_as_str);
 	return (0);
 }

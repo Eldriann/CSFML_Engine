@@ -50,7 +50,7 @@ void initialize_physic_state(sf_engine_t *engine)
 	if (engine == NULL || engine->current_scene == NULL || \
 engine->current_scene->physic_engine == NULL || \
 engine->current_scene->physic_engine->update == NULL) {
-		my_puterror("Could not initialize physic state!\n");
+		my_putdebug("Could not initialize physic state!\n");
 		return;
 	}
 	engine->add_update(engine, engine->current_scene->physic_engine, \

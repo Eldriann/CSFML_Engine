@@ -15,8 +15,8 @@ int (*update)(void *object, int time))
 	updater_t *new_updater = malloc(sizeof(*new_updater));
 
 	if (object == NULL || update == NULL || new_updater == NULL) {
-		my_puterror("Add updater:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Add updater:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		if (new_updater != NULL)
 			free(new_updater);
 		return (84);
@@ -51,8 +51,8 @@ void update_main_engine(sf_engine_t *engine)
 	int delta_time = 0;
 
 	if (engine == NULL) {
-		my_puterror("Update engine:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Update engine:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return;
 	}
 	if (engine->next_scene)

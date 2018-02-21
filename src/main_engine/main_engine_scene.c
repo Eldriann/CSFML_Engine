@@ -29,9 +29,9 @@ int update_selected_scene(sf_engine_t *engine)
 
 	if (engine == NULL || engine->next_scene == NULL || new_scene == NULL) {
 		if (new_scene == NULL) {
-			my_puterror("[ERROR]Requested scene:");
-			my_puterror(engine->next_scene);
-			my_puterror(" not found!\n");
+			my_putdebug("[ERROR]Requested scene:");
+			my_putdebug(engine->next_scene);
+			my_putdebug(" not found!\n");
 		}
 		return (84);
 	}

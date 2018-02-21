@@ -14,8 +14,8 @@ sf_graph_engine_t *create_graphical_engine(void)
 	sf_graph_engine_t *new_graph_engine = malloc(sizeof(*new_graph_engine));
 
 	if (new_graph_engine == NULL) {
-		my_puterror("Create graphical engine:\n    ");
-		my_puterror(MSG_MY_SFML_MALLOC);
+		my_putdebug("Create graphical engine:\n    ");
+		my_putdebug(MSG_MY_SFML_MALLOC);
 		return (NULL);
 	}
 	new_graph_engine->layers_list = NULL;
@@ -35,8 +35,8 @@ void destroy_graphical_engine(sf_graph_engine_t *engine)
 	char *curr_id = my_strdup("");
 
 	if (engine == NULL) {
-		my_puterror("Destroy graphical engine:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Destroy graphical engine:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return;
 	}
 	unload_all_textures(engine);

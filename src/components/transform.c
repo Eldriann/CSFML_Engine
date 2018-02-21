@@ -14,8 +14,8 @@ sf_transform_t *create_transform(gameobject_t *parent)
 	sf_transform_t *new_transform = malloc(sizeof(*new_transform));
 
 	if (new_transform == NULL) {
-		my_puterror("Create transform:\n    ");
-		my_puterror(MSG_MY_SFML_MALLOC);
+		my_putdebug("Create transform:\n    ");
+		my_putdebug(MSG_MY_SFML_MALLOC);
 		return (NULL);
 	}
 	new_transform->parent = parent;
@@ -32,8 +32,8 @@ sf_transform_t *create_transform(gameobject_t *parent)
 void destroy_transform(sf_transform_t *transform)
 {
 	if (transform == NULL) {
-		my_puterror("Destroy transform:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Destroy transform:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return;
 	}
 	free(transform);
@@ -42,8 +42,8 @@ void destroy_transform(sf_transform_t *transform)
 int default_move_transform(sf_transform_t *transform, vector_t movement)
 {
 	if (transform == NULL) {
-		my_puterror("Default move transform function:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Default move transform function:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return (84);
 	}
 	transform->position.x += movement.x;
@@ -55,8 +55,8 @@ int default_move_transform(sf_transform_t *transform, vector_t movement)
 int default_rotate_transform(sf_transform_t *transform, vector_t rotation)
 {
 	if (transform == NULL) {
-		my_puterror("Default rotate transform function:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Default rotate transform function:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return (84);
 	}
 	transform->rotation.x += rotation.x;
@@ -68,8 +68,8 @@ int default_rotate_transform(sf_transform_t *transform, vector_t rotation)
 int default_resize_transform(sf_transform_t *transform, vector_t scale)
 {
 	if (transform == NULL) {
-		my_puterror("Default resize transform function:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Default resize transform function:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return (84);
 	}
 	transform->scale.x += scale.x;

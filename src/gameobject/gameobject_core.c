@@ -14,8 +14,8 @@ gameobject_t *create_gameobject(char const *name)
 	gameobject_t *new_go = malloc(sizeof(*new_go));
 
 	if (new_go == NULL) {
-		my_puterror("Create GO:\n    ");
-		my_puterror(MSG_MY_SFML_MALLOC);
+		my_putdebug("Create GO:\n    ");
+		my_putdebug(MSG_MY_SFML_MALLOC);
 		return (NULL);
 	}
 	new_go->id = my_int_to_str((long)new_go);
@@ -35,8 +35,8 @@ void destroy_gameobject(gameobject_t *go)
 	char *curr_id = NULL;
 
 	if (go == NULL) {
-		my_puterror("Destroy gameobject:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Destroy gameobject:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return;
 	}
 	while (go->components != NULL) {

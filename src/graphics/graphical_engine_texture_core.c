@@ -14,18 +14,18 @@ int load_texture_in_memory(sf_graph_engine_t *engine, char const *path)
 	sfTexture *new_texture = engine->get_texture(engine, path);
 
 	if (path == NULL) {
-		my_puterror("Load texture:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Load texture:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return (84);
 	}
 	if (new_texture != NULL) {
-		my_puterror("Load texture:\n    [INFO]Already loaded!\n");
+		my_putdebug("Load texture:\n    [INFO]Already loaded!\n");
 		return (0);
 	}
 	new_texture = sfTexture_createFromFile(path, NULL);
 	if (new_texture == NULL) {
-		my_puterror("Load texture:\n    ");
-		my_puterror(MSG_MY_SFML_FILE_NOT_FOUND);
+		my_putdebug("Load texture:\n    ");
+		my_putdebug(MSG_MY_SFML_FILE_NOT_FOUND);
 		return (84);
 	}
 	engine->textures_list = sf_push(new_texture, \
@@ -38,8 +38,8 @@ void unload_all_textures(sf_graph_engine_t *engine)
 	char *curr_id = my_strdup("");
 
 	if (engine == NULL) {
-		my_puterror("Unload texture:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Unload texture:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return;
 	}
 	while (engine->textures_list != NULL) {

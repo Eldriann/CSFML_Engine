@@ -13,8 +13,8 @@
 int add_gameobject(sf_engine_t *engine, gameobject_t *object)
 {
 	if (engine == NULL || object == NULL) {
-		my_puterror("Add gameobject engine:\n    ");
-		my_puterror(MSG_MY_SFML_ERR_NULL);
+		my_putdebug("Add gameobject engine:\n    ");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
 		return (84);
 	}
 	engine->current_scene->gameobjects = sf_push(object, \
