@@ -12,15 +12,18 @@ If you have any question fill free to ask me at julian.frabel@epitech.eu.
 
 Examples:
 - your main loop should look like this:
+```
 	while (sfRenderWindow_isOpen(engine->window)) {
 		engine->update(engine);
 		if (engine->current_scene)
 			engine->current_scene->loop(engine, NULL);
 		engine->render(engine);
 	}
+```
  with all your scene related code in the loop function of the scene
 
 - your scene files should look like this:
+```
 	int load_XXX_scene(sf_engine_t *engine, void *data)
 	{
 		if (engine == NULL)
@@ -64,5 +67,6 @@ Examples:
 		engine->add_scene(engine, new_scene);
 		return (new_scene);
 	}
+```
 
 - Updaters will be run each frame with as parameter the elapsed time since last call in microseconds
