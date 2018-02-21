@@ -5,7 +5,6 @@
 ** Collision logic funcs
 */
 
-#include "my.h"
 #include "my_sfml_gameobject.h"
 #include "my_sfml_core.h"
 #include <stdlib.h>

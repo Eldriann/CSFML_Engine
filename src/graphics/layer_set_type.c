@@ -5,7 +5,6 @@
 ** Set the layer render type based on it's priority
 */
 
-#include "my.h"
 #include "my_sfml_graphics.h"
 
 int set_layer_render_type(sf_graph_engine_t *engine, int priority, \

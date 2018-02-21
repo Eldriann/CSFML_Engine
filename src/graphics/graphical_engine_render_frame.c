@@ -5,7 +5,6 @@
 ** Render a frame of the graphical engine
 */
 
-#include "my.h"
 #include "my_sfml_core.h"
 #include "my_sfml_graphics.h"
 

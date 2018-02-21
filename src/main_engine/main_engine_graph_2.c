@@ -7,7 +7,6 @@
 
 /* File created the 20/02/2018 at 12:08:45 by julian.frabel@epitech.eu */
 
-#include "my.h"
 #include "my_sfml_core.h"
 #include "my_sfml_engine.h"
 #include <SFML/Graphics.h>

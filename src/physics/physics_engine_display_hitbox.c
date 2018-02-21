@@ -5,7 +5,6 @@
 ** Display all hitbox as a pink rect
 */
 
-#include "my.h"
 #include "my_sfml_engine.h"
 #include "my_sfml_gameobject.h"
 

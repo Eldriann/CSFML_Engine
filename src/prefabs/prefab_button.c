@@ -5,7 +5,6 @@
 ** prefab for a button that can be clicked
 */
 
-#include "my.h"
 #include "my_sfml_engine.h"
 #include "my_sfml_gameobject.h"
 #include "my_sfml_prefab.h"

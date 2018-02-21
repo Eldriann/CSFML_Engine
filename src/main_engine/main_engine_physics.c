@@ -5,7 +5,6 @@
 ** main engine physics engine links
 */
 
-#include "my.h"
 #include "my_sfml_engine.h"
 
 int add_physic_object_main_engine(sf_engine_t *engine, gameobject_t *object)

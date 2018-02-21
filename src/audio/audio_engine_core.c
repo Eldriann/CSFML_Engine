@@ -5,7 +5,6 @@
 ** Core of the audio engine
 */
 
-#include "my.h"
 #include "my_sfml_core.h"
 #include "my_sfml_audio.h"
 #include <SFML/Audio.h>

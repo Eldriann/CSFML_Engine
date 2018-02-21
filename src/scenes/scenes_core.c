@@ -5,7 +5,7 @@
 ** Create and destroy a scene respectivelly
 */
 
-#include "my.h"
+#include <stdlib.h>
 #include "my_sfml_core.h"
 #include "my_sfml_engine.h"
 #include "my_sfml_scenes.h"

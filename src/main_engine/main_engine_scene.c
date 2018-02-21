@@ -5,7 +5,7 @@
 ** Scene management
 */
 
-#include "my.h"
+#include <stdlib.h>
 #include "my_sfml_engine.h"
 
 int add_scene(sf_engine_t *engine, sf_scene_t *scene)

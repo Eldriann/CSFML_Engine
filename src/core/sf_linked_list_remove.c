@@ -5,7 +5,6 @@
 ** Remove data from a list
 */
 
-#include "my.h"
 #include "my_sfml_core.h"
 #include <stdlib.h>
 

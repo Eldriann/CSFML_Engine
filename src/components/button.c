@@ -5,7 +5,6 @@
 ** Component that represent a button
 */
 
-#include "my.h"
 #include "my_sfml_gameobject.h"
 #include <stdlib.h>
 

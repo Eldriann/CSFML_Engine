@@ -5,7 +5,7 @@
 ** Add a sprite to a render layer
 */
 
-#include "my.h"
+#include <stdlib.h>
 #include "my_sfml_core.h"
 #include "my_sfml_graphics.h"
 

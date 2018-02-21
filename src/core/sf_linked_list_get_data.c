@@ -5,7 +5,6 @@
 ** Get data from a linked list
 */
 
-#include "my.h"
 #include "my_sfml_core.h"
 #include <stdlib.h>
 
