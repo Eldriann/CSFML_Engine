@@ -134,6 +134,14 @@ int my_putdebug(const char *debug);
 ** \brief turn an int in an str
 */
 char *my_int_to_str(int nb);
+/**
+** \brief compare two str
+*/
+int my_strcmp(char const *s1, char const *s2);
+/**
+** \brief return a number from a character string
+*/
+int my_getnbr(const char *str);
 
 /* --------------------------------VECTOR-------------------------------- */
 

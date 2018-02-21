@@ -33,7 +33,9 @@ SRC_FILES_CORE	=	sf_linked_list_get_data.c			\
 			my_strdup.c					\
 			my_strlen.c					\
 			my_putdebug.c					\
-			my_int_to_str.c
+			my_int_to_str.c					\
+			my_strcmp.c					\
+			my_getnbr.c
 
 SRC_DIR_GO	=	$(realpath src/gameobject)
 
