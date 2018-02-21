@@ -49,6 +49,11 @@ int update_selected_scene(sf_engine_t *engine)
 
 int change_scene(sf_engine_t *engine, const char *name, void *data)
 {
+	if (engine == NULL || name == NULL) {
+		my_putdebug("[WARNING]Change scene:	\n");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
+		return (84);
+	}
 	engine->next_scene = strdup(name);
 	engine->data = data;
 	return (0);

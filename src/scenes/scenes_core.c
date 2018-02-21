@@ -13,8 +13,14 @@
 
 sf_scene_t *create_scene(char *name)
 {
-	sf_scene_t *scene = malloc(sizeof(*scene));
+	sf_scene_t *scene = NULL;
 
+	if (name == NULL) {
+		my_putdebug("[ERROR]Create Scene:	\n");
+		my_putdebug(MSG_MY_SFML_ERR_NULL);
+		return (NULL);
+	}
+	scene = malloc(sizeof(*scene));
 	if (scene == NULL)
 		return (NULL);
 	scene->name = strdup(name);
