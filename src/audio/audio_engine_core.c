@@ -8,6 +8,7 @@
 #include "my_sfml_core.h"
 #include "my_sfml_audio.h"
 #include <SFML/Audio.h>
+#include <string.h>
 #include <stdlib.h>
 
 sf_audio_engine_t *create_audio_engine(void)
@@ -30,11 +31,11 @@ sf_audio_engine_t *create_audio_engine(void)
 
 void destroy_audio_engine(sf_audio_engine_t *engine)
 {
-	char *curr_id = my_strdup("");
+	char *curr_id = strdup("");
 
 	while (engine->sound_list != NULL) {
 		free(curr_id);
-		curr_id = my_strdup(engine->sound_list->id);
+		curr_id = strdup(engine->sound_list->id);
 		sfMusic_destroy(engine->sound_list->data);
 		sf_remove(curr_id, &(engine->sound_list));
 	}

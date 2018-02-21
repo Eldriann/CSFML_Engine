@@ -119,25 +119,13 @@ void my_sort_sf_list(sf_linked_list_t **list, int (*cmp)());
 /* ----------------------------END-LINKEDLIST---------------------------- */
 
 /**
-** \brief strdup function
-*/
-char *my_strdup(const char *str);
-/**
-** \brief strlen function
-*/
-int my_strlen(const char *str);
-/**
 ** \brief put an str on the error output
 */
-int my_putdebug(const char *debug);
+void my_putdebug(const char *debug);
 /**
 ** \brief turn an int in an str
 */
 char *my_int_to_str(int nb);
-/**
-** \brief compare two str
-*/
-int my_strcmp(char const *s1, char const *s2);
 /**
 ** \brief return a number from a character string
 */

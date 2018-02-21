@@ -5,6 +5,7 @@
 ** Function that manage graphics
 */
 
+#include <string.h>
 #include <stdlib.h>
 #include "my_sfml_core.h"
 #include "my_sfml_graphics.h"
@@ -32,7 +33,7 @@ sf_graph_engine_t *create_graphical_engine(void)
 
 void destroy_graphical_engine(sf_graph_engine_t *engine)
 {
-	char *curr_id = my_strdup("");
+	char *curr_id = strdup("");
 
 	if (engine == NULL) {
 		my_putdebug("Destroy graphical engine:\n    ");
@@ -42,7 +43,7 @@ void destroy_graphical_engine(sf_graph_engine_t *engine)
 	unload_all_textures(engine);
 	while (engine->layers_list != NULL) {
 		free(curr_id);
-		curr_id = my_strdup(engine->layers_list->id);
+		curr_id = strdup(engine->layers_list->id);
 		destroy_layer(engine->layers_list->data);
 		sf_remove(curr_id, &(engine->layers_list));
 	}

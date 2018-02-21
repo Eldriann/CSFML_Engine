@@ -5,6 +5,7 @@
 ** Physics engine core
 */
 
+#include <string.h>
 #include <stdlib.h>
 #include "my_sfml_core.h"
 #include "my_sfml_engine.h"
@@ -41,7 +42,7 @@ void destroy_physics_engine(sf_physics_engine_t *engine)
 		return;
 	}
 	while (engine->physics_objects != NULL) {
-		curr_id = my_strdup(engine->physics_objects->id);
+		curr_id = strdup(engine->physics_objects->id);
 		sf_remove(curr_id, &engine->physics_objects);
 		free(curr_id);
 	}

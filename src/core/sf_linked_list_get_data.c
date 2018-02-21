@@ -6,6 +6,7 @@
 */
 
 #include "my_sfml_core.h"
+#include <string.h>
 #include <stdlib.h>
 
 void *get_data_from_node(sf_linked_list_t *list, void *comp, int (*cmp)())
@@ -35,7 +36,7 @@ void *get_data(char const *id, sf_linked_list_t *list)
 		return (NULL);
 	}
 	while (list != NULL) {
-		if (my_strcmp(id, list->id) == 0)
+		if (strcmp(id, list->id) == 0)
 			return (list->data);
 		list = list->next;
 	}
@@ -52,13 +53,13 @@ void **get_data_array(char const *id, sf_linked_list_t *list)
 	if (id == NULL || list == NULL)
 		return (NULL);
 	for (; list != NULL; list = list->next)
-		if (my_strcmp(id, list->id) == 0)
+		if (strcmp(id, list->id) == 0)
 			nb_elements++;
 	return_array = malloc(sizeof(*return_array) * (nb_elements + 1));
 	if (return_array == NULL)
 		return (NULL);
 	for (int i = 0; list_cpy; list_cpy = list_cpy->next) {
-		if (my_strcmp(id, list_cpy->id) == 0) {
+		if (strcmp(id, list_cpy->id) == 0) {
 			return_array[i] = list_cpy->data;
 			i++;
 		}
