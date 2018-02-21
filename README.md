@@ -10,6 +10,8 @@ If you want to destroy gameobject prefer using engine->destroy_gameobject or you
 
 If you have any question fill free to ask me at julian.frabel@epitech.eu.
 
+To remove the engine debug messages and warning in the console go to include/my_sfml_core.h and change the macro from 1 to 0
+
 Examples:
 - your main loop should look like this:
 ```
