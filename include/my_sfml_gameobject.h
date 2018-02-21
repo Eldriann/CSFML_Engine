@@ -274,8 +274,9 @@ struct my_sfml_collider_2d {
 	void (*destroy)(); /**< Destroy func. Refer to destroy_collider_2d()*/
 	gameobject_t *parent; /**< Parent of the collider */
 	sfIntRect hitbox; /**< Hitbox of the gameobject */
-	int trigger; /**< [0,1] Is the collider a trigger. If checked will not \
-collide but act like a trigger */
+	int collides; /**< Should the object collide in the physics engine */
+	int trigger; /**< [0,1] Is the collider a trigger. If checked will run \
+the triggered_func when detecting a collision */
 	int (*triggered_func)(); /**< Function run when a gameobject \
 collide with this collider. */
 };

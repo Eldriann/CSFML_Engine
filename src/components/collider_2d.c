@@ -32,6 +32,7 @@ sf_collider_2d_t *create_collider_2d(gameobject_t *parent)
 	new_collider->parent = parent;
 	new_collider->hitbox = (sfIntRect){0, 0, 32, 32};
 	new_collider->trigger = 0;
+	new_collider->collides = 1;
 	new_collider->destroy = &destroy_collider_2d;
 	new_collider->triggered_func = &default_trigger_function;
 	return (new_collider);
