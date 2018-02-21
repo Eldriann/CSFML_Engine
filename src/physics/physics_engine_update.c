@@ -44,14 +44,14 @@ void do_movement(sf_physics_engine_t *engine, gameobject_t *obj, float time)
 	if (!has_physics_collisions(new_pos, engine, obj))
 		tr->position.x = (rb->speed.x * time + tr->position.x);
 	else
-		rb->speed.x = 0;
+		rb->speed.x = rb->acceleration.x = 0;
 	new_pos = collider->hitbox;
 	(new_pos.left) += (tr->position.x);
 	(new_pos.top) += (rb->speed.y * time + tr->position.y);
 	if (!has_physics_collisions(new_pos, engine, obj))
 		tr->position.y = (rb->speed.y * time + tr->position.y);
 	else
-		rb->speed.y = 0;
+		rb->speed.y = rb->acceleration.y = 0;
 }
 
 void update_gameobject_physics(sf_physics_engine_t *engine, \
