@@ -275,6 +275,7 @@ struct my_sfml_collider_2d {
 	gameobject_t *parent; /**< Parent of the collider */
 	sfIntRect hitbox; /**< Hitbox of the gameobject */
 	int collides; /**< Should the object collide in the physics engine */
+	int layer; /**< The layer the object collide on 0:all other:specific */
 	int trigger; /**< [0,1] Is the collider a trigger. If checked will run \
 the triggered_func when detecting a collision */
 	int (*triggered_func)(); /**< Function run when a gameobject \

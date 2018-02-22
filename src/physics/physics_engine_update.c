@@ -20,9 +20,9 @@ gameobject_t *obj)
 	collide = engine->get_collisions_rect(engine, pos, &nb_collisions, obj);
 	for (int i = 0; i < nb_collisions; i++) {
 		current_collider = get_component(collide[i], COLLIDER_2D);
-		if (current_collider->collides) {
+		if (current_collider->collides && (!obj_collider->layer || \
+!current_collider->layer || obj_collider->layer == current_collider->layer))
 			return_value = 1;
-		}
 	}
 	if (collide)
 		free(collide);
