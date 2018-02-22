@@ -52,21 +52,20 @@ Examples:
 
 	int unload_XXX_scene(sf_engine_t *engine, void *data)
 	{
-		(void)data;
 		/* Cleaning: reset scene will auto clear all of the scene settting it back to the unloaded state */
 		reset_scene(engine->current_scene);
 		return (0);
 	}
 
-	sf_scene_t *create_menu_scene(sf_engine_t *engine)
+	sf_scene_t *create_XXX_scene(sf_engine_t *engine)
 	{
 		sf_scene_t *new_scene = create_scene("XXX");
 
 		if (new_scene == NULL || engine == NULL)
 			return (NULL);
-		new_scene->load = &load_menu_scene;
-		new_scene->loop = &loop_menu_scene;
-		new_scene->unload = &unload_menu_scene;
+		new_scene->load = &load_XXX_scene;
+		new_scene->loop = &loop_XXX_scene;
+		new_scene->unload = &unload_XXX_scene;
 		engine->add_scene(engine, new_scene);
 		return (new_scene);
 	}
