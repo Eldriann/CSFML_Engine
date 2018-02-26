@@ -70,7 +70,8 @@ int button_update(sf_button_t *button, int delta_time)
 	(void)delta_time;
 	if (button == NULL)
 		return (84);
-	if (is_over_button(button) && button->state == 0) {
+	if (is_over_button(button) && \
+!sfMouse_isButtonPressed(sfMouseLeft) && button->state == 0) {
 		button->state = 1;
 		button->on_mouse_enter(button);
 	} else if (!is_over_button(button) && button->state >= 1) {
@@ -81,5 +82,7 @@ sfMouse_isButtonPressed(sfMouseLeft) && button->state == 1) {
 		button->state = 2;
 		button->on_clicked(button);
 	}
+	if (button->state == 2 && !sfMouse_isButtonPressed(sfMouseLeft))
+		button->state = 0;
 	return (0);
 }
